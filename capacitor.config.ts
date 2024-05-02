@@ -1,8 +1,8 @@
 import type { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'io.ionic.starter',
-  appName: 'MyAlarm',
+  appId: 'io.ionic.MyAlarm',
+  appName: 'Mi alarma',
   webDir: 'www'
 };
 
