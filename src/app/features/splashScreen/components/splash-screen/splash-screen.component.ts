@@ -33,15 +33,15 @@ export class SplashScreenComponent
           {
             setTimeout(()=>
             {
-              this.splashScreenStyle = 'justify-content: normal'
               this.splashScreenClass = 'scale-in-hor-center';
+              this.splashScreenStyle = 'justify-content: normal'
               this.showText = true;
-            }, 700)
+            }, 1850)
 
 
             setTimeout(() => 
             {
-           //   this.utilsService.changeRoute('/auth')
+              this.utilsService.changeRoute('/auth')
             }, 3000);
           })
         });
