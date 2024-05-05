@@ -1,3 +1,8 @@
+ion-content{
+  --background: #024050;
+}
+
+
 .splashScreen
 {
   width: 100%;
@@ -10,24 +15,9 @@
 
 .iconContainer
 {
-  aspect-ratio: 1/1;
-  max-width: 75%;
-  max-height: 75%;
-  background-color: rgb(0, 0, 0);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  border-radius: 17%;
   margin-top: 10%;
 }
 
-img
-{
-  max-width: 95%;
-  max-height: 95%;
-  border-radius: 15%;
-}
 
 h1
 {

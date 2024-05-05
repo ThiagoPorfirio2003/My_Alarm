@@ -1,0 +1,32 @@
+.loginForm
+{
+    width: 100%;
+}
+
+ion-input{
+    font-size: 24px;
+    font-family: var(--font-oficial);
+}
+
+ion-note {
+    color: #c5000f;
+    margin-top: 2%;
+    margin-left: 10%;
+    display: block;
+    //font-size: 12px;
+}
+
+.iconEye
+{
+    font-size: 225%;
+}
+
+
+.iconColor{
+    color: var(--ion-color-secondary);
+}
+
+.logBtn{
+    font-size: 24px;
+    --box-shadow:0px
+}

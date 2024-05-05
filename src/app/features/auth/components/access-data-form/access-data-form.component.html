@@ -1,0 +1,44 @@
+<form class="loginForm" [formGroup]="this.loginForm">
+  <ion-item lines="none" class="ionTopTag secondaryInput">
+    <ion-icon class="iconColor" slot="start" name="mail"></ion-icon>
+
+    <ion-input formControlName="email" name="email" type="email" inputmode="email" placeholder="Email" clearInput="true"
+    (ionInput)="this.changeEmailErrorText()"></ion-input>
+  </ion-item>   
+
+  <ion-button (click)="this.submitData()" class="logBtn ionBetweenTag primaryInput" fill="full" shape="round" >
+    Iniciar sesión
+    <ion-icon slot="end" name="log-in"></ion-icon>
+  </ion-button>  
+
+  <ion-item lines="none" class="ionBottomTag secondaryInput">
+    <ion-input formControlName="password" name="password" inputmode="password" [type]="this.passwordInputType" placeholder="Clave" clearInput="true" clearOnEdit="false"
+    (ionInput)="this.changePasswordErrorText()"></ion-input>
+
+    <ion-button size="small" (click)="this.showHidePassword()" fill="clear">
+      <ion-icon class="iconEye iconColor" slot="icon-only" [name]="this.passwordLockName"></ion-icon>
+    </ion-button>
+
+  </ion-item>
+</form>
+
+@if(this.loginForm.controls['email'].errors && this.loginForm.controls['email'].touched) 
+{
+  <ion-note>{{this.emailErrorText}}</ion-note>
+}
+
+@if(this.loginForm.controls['password'].errors && this.loginForm.controls['password'].touched) 
+{
+  <ion-note>{{this.passwordErrorText}}</ion-note>
+}
+
+<!-- 
+    <fieldset>
+    <label for="email">Email</label>
+    <input type="text" id="email">
+  </fieldset>
+
+  <button class="logBtn">
+    OFDHOAFHDAODF
+  </button>
+-->

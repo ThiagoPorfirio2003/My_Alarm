@@ -7,13 +7,17 @@ import { IonicModule } from '@ionic/angular';
 import { AuthPageRoutingModule } from './auth-routing.module';
 
 import { AuthPage } from './auth.page';
+import { AuthModule } from '../auth.module';
+import { SharedComponentsModule } from 'src/app/core/sharedComponents/shared-components.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    AuthPageRoutingModule
+    AuthPageRoutingModule, 
+    AuthModule,
+    SharedComponentsModule
   ],
   declarations: [AuthPage]
 })
