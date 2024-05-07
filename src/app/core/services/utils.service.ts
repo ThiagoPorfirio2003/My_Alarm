@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { LoadingController, LoadingOptions, SpinnerTypes } from '@ionic/angular';
+import Swal, { SweetAlertOptions } from 'sweetalert2'
+
 
 @Injectable({
   providedIn: 'root'
@@ -9,42 +11,28 @@ export class UtilsService {
 
   public splashScreenHasShown : boolean;
 
-  constructor(//private toastController : ToastController, 
-    //private alertController : AlertController,
-    private loadingController : LoadingController,
+  constructor(private loadingController : LoadingController,
     private router : Router) 
     { 
       this.splashScreenHasShown = false;
     }
 
-    /*
-  public getToast(toastOptions : ToastOptions)
+  public getSweet(options : SweetAlertOptions)
   {
-    return this.toastController.create(toastOptions);
+    options.heightAuto = false;
+    return Swal.mixin(options)
   }
 
-  public showToast(toastOptions : ToastOptions)
+  public showSweet(options : SweetAlertOptions)
   {
-    this.getToast(toastOptions)
-    .then((toast)=> toast.present())
+    options.heightAuto = false;
+    return Swal.fire(options)
   }
 
-  public getAlert(alertOptions : AlertOptions)
-  {
-    return this.alertController.create(alertOptions)
-  }
-   
-  public showAlert(alertOptions : AlertOptions)
-  {
-    this.getAlert(alertOptions)
-    .then((ale)=> ale.present())
-  }
-  */
   public getLoadingCtrl(options: LoadingOptions)
   {
     return this.loadingController.create(options)
   }
-
 
   public changeRoute(newRoute : string)
   {

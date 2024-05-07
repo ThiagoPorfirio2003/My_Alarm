@@ -2,19 +2,20 @@
   <ion-toolbar>
     <ion-grid>
       <ion-row class="ion-align-items-center">
-        <ion-col><ion-title class="tittle ion-text-center">{{this.title}}</ion-title></ion-col>
-        <!--<ion-col size="4"><ion-button>Click me</ion-button></ion-col>-->
+        @if (this.authService.isLogued) 
+        {
+          <ion-col><ion-title>{{this.profile}}</ion-title></ion-col>
+          <ion-col>
+            <ion-button (click)="this.signOut()" expand="block" fill="solid" shape="round" class="logOutBtn">
+              Salir
+              <ion-icon slot="end" name="log-out"></ion-icon>
+            </ion-button>
+          </ion-col>
+        }
+        @else {
+          <ion-col><ion-title class="tittle ion-text-center">{{this.title}}</ion-title></ion-col>
+        }
       </ion-row>
     </ion-grid>
-
-    <!-- 
-      <ion-title class="title">{{this.title}}</ion-title>
-      @if(this.authService.isLogued) 
-      {
-        <ion-button class="exit-btn" shape="round" slot="end" (click)="this.signOut()">
-          Cerrar sesion
-        </ion-button>
-      }
-    -->
   </ion-toolbar>
 </ion-header>
