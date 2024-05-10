@@ -1,9 +1,17 @@
 <app-header></app-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">principal</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content>
+  <div class="screen" [style]="this.screenBackgroundStyle">
+    <h1 [style]="this.h1ColorStyle">{{this.alarmStateTxt}}</h1>
+
+    <ion-button (click)="this.changeAlarmState()" class="iconContainer">
+      <img class="imgIcon" src="../../../../../assets/splashArt/MyAlarm_NoBack.png">
+    </ion-button>
+  </div>
 </ion-content>
+
+    <!-- 
+    <ion-button >
+      <h2>{{this.btnText}}</h2>
+    </ion-button>
+    -->
