@@ -4,16 +4,21 @@
       <ion-row class="ion-align-items-center">
         @if (this.authService.isLogued) 
         {
-          <ion-col><ion-title>{{this.profile}}</ion-title></ion-col>
           <ion-col>
-            <ion-button (click)="this.signOut()" expand="block" fill="solid" shape="round" class="logOutBtn">
-              Salir
-              <ion-icon slot="end" name="log-out"></ion-icon>
+            <ion-button (click)="this.signOut()" expand="block" class="logOutBtn">
+              <ion-label color="primary">Salir</ion-label>
+              <ion-icon slot="end" name="log-out" color="primary"></ion-icon>
             </ion-button>
           </ion-col>
+          <ion-col><ion-title>{{this.profile}}</ion-title></ion-col>
         }
         @else {
-          <ion-col><ion-title class="tittle ion-text-center">{{this.title}}</ion-title></ion-col>
+          <ion-col>
+            <div class="iconFrame">
+              <ion-icon color="secondary" name="alarm-outline"></ion-icon>
+            </div>
+          </ion-col>
+          <ion-col><ion-title class="tittle ion-text-end">{{this.title}}</ion-title></ion-col>
         }
       </ion-row>
     </ion-grid>

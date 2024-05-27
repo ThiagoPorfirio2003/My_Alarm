@@ -31,7 +31,7 @@ export class AccessDataFormComponent implements OnChanges
     this.passwordIsVisible = true;
     this.showHidePassword();
 
-    this.emailErrorText = 'Email: ';
+    this.emailErrorText = 'Correo: ';
     this.passwordErrorText = 'Clave: '
 
     this.loginForm = inject(FormBuilder).group({
@@ -72,25 +72,25 @@ export class AccessDataFormComponent implements OnChanges
     let errors : any;
 
     errors = this.loginForm.controls['email'].errors
-    this.emailErrorText = 'Email: ';
+    this.emailErrorText = 'Correo: ';
 
     if(errors)
     {
       if(errors.required)
       {
-        this.emailErrorText = 'Email: Este campo no puede estar vacío';
+        this.emailErrorText = 'Correo: Este campo no puede estar vacío';
       }
       else
       {
         if(errors.email)
         {
-          this.emailErrorText = 'Email: El email ingresado no es válido';
+          this.emailErrorText = 'Correo: El correo ingresado no es válido';
         }
         else
         {
           if(errors.maxlength)
             {
-              this.emailErrorText = 'Email: Se superaron los 40 caracteres';
+              this.emailErrorText = 'Correo: Se superaron los 40 caracteres';
             }
         }
       }

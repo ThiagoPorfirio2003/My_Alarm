@@ -8,15 +8,35 @@ ion-toolbar{
 
 ion-title{
      color: var(--ion-color-secondary);
+     text-align: center;
 }
 
 ion-col{
     padding: 0px;
 }
 
+ion-label{
+    --color: #219EBC;    
+
+}
+
+ion-icon{
+    font-size: 2rem;
+}
+
+.iconFrame
+{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content:flex-start;
+    padding-left: 10%;
+}
+
 
 .logOutBtn
 {
     --background: var(--ion-color-secondary);
-    --color: var(--ion-color-primary);    
+    --color: #219EBC;    
 }

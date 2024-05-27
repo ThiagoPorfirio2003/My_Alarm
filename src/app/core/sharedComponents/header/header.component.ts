@@ -13,12 +13,14 @@ import { TranslateEnums } from '../../enums/userProperties';
 export class HeaderComponent
 {
   @Input() title! : string;
+  @Input() alarmIsActivated : boolean;
   public profile! : string;
 
   constructor(public authService : AuthService, 
     private utilsService : UtilsService) 
   {
     addIcons({logOut})
+    this.alarmIsActivated = false;
 
     if(authService.isLogued)
     {
@@ -28,21 +30,25 @@ export class HeaderComponent
 
   public signOut()
   {
-    this.utilsService.showSweet({title:'¿Seguro que desea salír?',
-    showDenyButton: true, denyButtonText: 'No', denyButtonColor: '#023047',
-    confirmButtonText: 'Sí', confirmButtonColor: '#219EBC',
-    customClass: {
-      title: 'sweetTitle',
-      confirmButton: 'sweetConfirm',
-      denyButton: 'sweetDeny',
-    }})
-    .then((result)=>
+    if(!this.alarmIsActivated)
     {
-      if(result.isConfirmed)
+      this.utilsService.showSweet({title:'¿Seguro que desea salír?',
+      showDenyButton: true, denyButtonText: 'No', denyButtonColor: '#023047',
+      confirmButtonText: 'Sí', confirmButtonColor: '#219EBC',
+      customClass: {
+        title: 'sweetTitle',
+        confirmButton: 'sweetConfirm',
+        denyButton: 'sweetDeny',
+      }})
+      .then((result)=>
       {
-        this.authService.logOut();
-        this.utilsService.changeRoute('/auth')
-      } 
-    })
+        if(result.isConfirmed)
+        {
+          this.authService.logOut();
+          this.utilsService.changeRoute('/auth')
+        } 
+      })
+    }
+    
   }
 }

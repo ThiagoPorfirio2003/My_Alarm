@@ -1,17 +1,24 @@
-<app-header></app-header>
+<app-header [alarmIsActivated]="this.isAlarmActivated"></app-header>
 
 <ion-content>
   <div class="screen" [style]="this.screenBackgroundStyle">
     <h1 [style]="this.h1ColorStyle">{{this.alarmStateTxt}}</h1>
 
-    <ion-button (click)="this.changeAlarmState()" class="iconContainer">
-      <img class="imgIcon" src="../../../../../assets/splashArt/MyAlarm_NoBack.png">
+    <ion-button (click)="this.changeAlarmState()" class="iconContainer" [style]="this.screenBackgroundStyle">
+        <img class="imgIcon" src="../../../../../assets/splashArt/MyAlarm_NoBack_Transparent.png">
     </ion-button>
   </div>
 </ion-content>
 
     <!-- 
-    <ion-button >
-      <h2>{{this.btnText}}</h2>
-    </ion-button>
+    aspect-ratio: 1 / 1;
+    max-width: 95%;
+    max-height: 75%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    --border-radius: 15%;
+    --background: #fafafa;
+    border: solid #000 16px;
     -->
