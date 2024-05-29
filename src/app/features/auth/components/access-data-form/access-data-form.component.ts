@@ -32,7 +32,7 @@ export class AccessDataFormComponent implements OnChanges
     this.showHidePassword();
 
     this.emailErrorText = 'Correo: ';
-    this.passwordErrorText = 'Clave: '
+    this.passwordErrorText = 'Clave: ';
 
     this.loginForm = inject(FormBuilder).group({
       email: ['', [Validators.required, Validators.email, Validators.maxLength(60)]],
@@ -47,8 +47,8 @@ export class AccessDataFormComponent implements OnChanges
   ngOnChanges() : void 
   {
     this.loginForm.setValue(this.fastUser);
-    this.changeEmailErrorText();
-    this.changePasswordErrorText();
+    this.emailErrorText = 'Correo: ';
+    this.passwordErrorText = 'Clave: ';
   }
 
   public showHidePassword()
